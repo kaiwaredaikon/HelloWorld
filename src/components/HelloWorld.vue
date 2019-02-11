@@ -4,7 +4,7 @@
     <p>
       名前<input v-model="name">
       <sui-button>Click Here</sui-button>
-      <button disabled v-on:click="doAdd">モンスターを追加</button>
+      <button v-on:click="doAdd">モンスターを追加</button>
       <ul>
         <li v-for = "item in list" v-bind:key="item.id">
           ID.{{item.id}} {{item.name}} {{item.hp}}
@@ -12,12 +12,12 @@
       </ul>
     </p>
 
+    <p>{{toDay}}</p>
+
   <sui-dropdown
     placeholder="Gender"
     selection
     :options="options"
-    :menu-header="menuHeader"
-    :search-in-menu="searchInMenu"
     v-model="current"
   />
   </div>
@@ -33,9 +33,10 @@ export default {
     return{
       name:'キマイラ',
       list: [
-        {id:1, name: 'スライム', hp:100 },
+        {id:10, name: 'スライム', hp:100 },
         {id:2, name: 'ゴブリン', hp:200 },
-        {id:3, name: 'ドラゴン', hp:500 },
+        {id:31, name: 'ドラゴン', hp:500 },
+        {id:8, name: 'カイワレドラゴン', hp:1500 },
       ],
 
       current: null,
@@ -44,11 +45,25 @@ export default {
       },
       options: [{
         text: 'Male',
-        value: 1,
-      }, {
+        value: 10,
+      },
+      {
         text: 'Female',
         value: 2,
-      }],
+      },
+      {
+        text: 'hogegege',
+        value: 3,
+      },
+      {
+        text: 'fugegege',
+        value: 11,
+      },
+
+      
+      ],
+
+      toDay: new Date()
     }
   },
   methods:{
@@ -56,6 +71,18 @@ export default {
       var max = this.list.reduce(function(a,b){
         return a>b.id?a:b.id
       },0)
+
+      let kaiwareDragon = this.list.reduce(function(previous,current,index){
+        let tmp = previous
+        if(current.id == 2 ){
+          console.log( "index = " + index )
+          return index
+        }
+        return tmp
+      },0)
+
+      console.log( "kaiwareDragon = " + kaiwareDragon ) 
+
       this.list.push({
         id:max+1,
         name:this.name,
