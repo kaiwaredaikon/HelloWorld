@@ -1,11 +1,48 @@
 <template>
   <div class="slot-test">
     ここにスロットを埋め込む<slot></slot>
-    <h2>子コンポーネント</h2>
-    <!-- <input type="checkbox" value="A" v-model="choice">A
-    <input type="checkbox" value="B" v-model="choice">B
-    <input type="checkbox" value="C" v-model="choice">C
-    <input type="text" v-model="text"> -->
+
+<div class="ui mini form">
+
+  <div class="inline fields">
+    <div class="four wide field">
+      <!-- <div class="fields"> -->
+        <div class="six wide field"> 
+          Name
+        </div>  
+       <div class="ten wide field">
+        <input type="text" placeholder="First Name" kl_vkbd_parsed="true">
+       </div>
+      <!-- </div> -->
+    </div>
+    
+    <div class="four wide field">
+      <label>Name</label>
+      <input type="text" placeholder="First Name" kl_vkbd_parsed="true">
+    </div>
+  </div>
+
+  <div class="inline fields">
+    <div class="four wide field">
+      <!-- <div class="fields"> -->
+        <div class="five wide field"> 
+          <label>First name</label>
+        </div>  
+       <div class="eleven wide field">
+        <input type="text" placeholder="First Name" kl_vkbd_parsed="true">
+       </div>
+      <!-- </div> -->
+    </div>
+    
+    <div class="four wide field">
+      <label>Name</label>
+      <input type="text" placeholder="First Name" kl_vkbd_parsed="true">
+    </div>
+  </div>
+
+</div>
+
+
   </div>
 </template>
 
